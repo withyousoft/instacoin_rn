@@ -1,0 +1,37 @@
+{
+  "name": "react-native-svprogresshud",
+  "version": "1.0.6",
+  "summary": "A clean and lightweight progress HUD for react native app, based on SVProgressHUD.",
+  "description": "react-native-svprogresshud",
+  "homepage": "https://github.com/hungtrn75/react-native-svprogresshud",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Hung Tran": "hungtrn75@email.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/hungtrn75/react-native-svprogresshud.git",
+    "tag": "1.0.6"
+  },
+  "source_files": "ios/Classes/**/*",
+  "public_header_files": "ios/Classes/**/*.h",
+  "requires_arc": true,
+  "default_subspecs": "SVProgressHUD_Core",
+  "dependencies": {
+    "React": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "SVProgressHUD_Core",
+      "source_files": "ios/SVProgressHUD/*.{h,m}",
+      "resources": "ios/SVProgressHUD/SVProgressHUD.bundle"
+    }
+  ]
+}
