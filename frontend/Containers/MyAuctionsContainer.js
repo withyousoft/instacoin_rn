@@ -57,6 +57,12 @@ const MyAuctionsContainer = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (functionError) {
+      console.log("Function Error ===> ", functionError);
+    }
+  }, [functionError]);
+
   const toggleActivityIndicator = (isLoading) => {
     if (isLoading) {
       SVProgressHUD.show();
