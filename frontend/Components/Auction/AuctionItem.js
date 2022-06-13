@@ -41,14 +41,12 @@ const AuctionItem = ({
   const image = "";
   useEffect(() => {
     if (auctionError) {
-      // console.log("auctionError ===> ", auctionError);
+      console.log("auctionError ===> ", auctionError);
     }
   }, [auctionError]);
 
   useEffect(() => {
     if (auctionData) {
-      console.log("auctionData ===> ", auctionData);
-
       setAuction({
         seller: auctionData[0],
         priceEth: Moralis.Units.FromWei(auctionData[1]).toFixed(3),

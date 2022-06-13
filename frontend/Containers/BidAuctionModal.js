@@ -66,8 +66,6 @@ export default function BidAuctionModal({ route, navigation }) {
     params: { _nft: nftContractAddress, _tokenId: tokenId },
   });
 
-  console.log("route.params ===> ", route.params);
-
   const {
     data: functionData,
     error: functionError,
