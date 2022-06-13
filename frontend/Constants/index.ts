@@ -1,4 +1,4 @@
-export const DEFAULT_AUCTION_DURATION = 86400 * 3;
+export const DEFAULT_AUCTION_DURATION = 86400;
 
 export const AUCTION_CONTRACT = {
   // external functions
