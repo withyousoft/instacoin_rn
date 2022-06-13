@@ -119,7 +119,7 @@ export default function CreateNftModal({ route, navigation }) {
         new Blob([JSON.stringify(metaData)], { type: "application/json" }),
         { saveIPFS: true }
       );
-      console.log("metaMoralisFile ===> ", metaMoralisFile);
+
       const priceEth = await convertUSD2ETH(price);
 
       if (metaMoralisFile && metaMoralisFile._ipfs) {
@@ -133,7 +133,9 @@ export default function CreateNftModal({ route, navigation }) {
             _nftAddress: Config.nftItemAddress,
             _tokenUri: metaMoralisFile._ipfs,
             _price: Moralis.Units.ETH(priceEth),
-            _duration: new Date().getTime() + DEFAULT_AUCTION_DURATION * 1000,
+            _duration:
+              Math.floor(new Date().getTime() / 1000) +
+              DEFAULT_AUCTION_DURATION,
             _imageUrl: imageMoralisFile._ipfs,
             _nftName: description,
           },

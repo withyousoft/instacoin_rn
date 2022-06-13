@@ -7,18 +7,18 @@ const RemainingTime = ({ duration, style }) => {
   const [timeText, setTimeText] = useState("00h:00m:00s");
 
   useEffect(() => {
-    if (duration < new Date().getTime()) {
+    if (duration < Math.floor(new Date().getTime() / 1000)) {
       return;
     } else {
       const intervalWork = setInterval(() => {
-        const currentTime = new Date().getTime();
+        const currentTime = Math.floor(new Date().getTime() / 1000);
         if (currentTime > duration) {
           setTimeText("00h:00m:00s");
           clearInterval(intervalWork);
         } else {
-          const hour = Math.floor((duration - currentTime) / 3600000);
-          const min = Math.floor(((duration - currentTime) % 3600000) / 60000);
-          const second = Math.floor(((duration - currentTime) % 60000) / 1000);
+          const hour = Math.floor((duration - currentTime) / 3600);
+          const min = Math.floor(((duration - currentTime) % 3600) / 60);
+          const second = (duration - currentTime) % 60;
           setTimeText(
             `${hour.toString().padStart(2, "0")}h:${min
               .toString()
